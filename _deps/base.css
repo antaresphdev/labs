@@ -1,0 +1,117 @@
+@import url('remedy.css');
+
+:root {
+  color-scheme: light dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  min-height : 100vh;
+}
+
+.page {
+  margin-inline: auto;
+  width        : min(100ch, 90%);
+  margin-block : 1rem;
+}
+
+.button {
+  --raised-3d-color     : #fff1;
+  --r3-highlight-color  : #fff2;
+  --r3-highlight-2-color: #fff3;
+  cursor                : pointer;
+  font-size             : 1em;
+  font-family           : sans-serif;
+  display               : inline flex;
+  padding-inline        : 1rem;
+  padding-block         : 0.5rem;
+  font-weight           : bold;
+  border                : none;
+  border-radius         : 0.5rem;
+  background-color      : #fafafa;
+  box-shadow            :
+    inset 0 0 0 var(--r3-highlight-size, 1px) var(--r3-highlight-color, rgba(255, 255, 255, 0.2)),
+    inset 0 var(--r3-highlight-size, 1px) var(--r3-highlight-size, 1px) var(--r3-highlight-2-color, var(--r3-highlight-color, rgba(255, 255, 255, 0.2))),
+    0 0 0 var(--r3-etch-size, 1px) var(--raised-3d-border, rgba(0, 0, 0, 0.1333333333)),
+    0 1px 1px var(--raised-3d-color, hsl(var(--d-contrast)/0.075)),
+    0 2px 2px var(--raised-3d-color, hsl(var(--d-contrast)/0.075)),
+    0 3px 3px var(--raised-3d-color, hsl(var(--d-contrast)/0.075)),
+    0 4px 4px var(--raised-3d-color, hsl(var(--d-contrast)/0.075)),
+    0 5px 5px var(--raised-3d-color, hsl(var(--d-contrast)/0.075));
+}
+
+.button.primary {
+  background-color    : crimson;
+  color               : white;
+  --r3-highlight-color: hsl(348, 83%, 67%);
+  --raised-3d-color   : hsl(348 83% 27% / 5%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .button {
+    --raised-3d-color: #0001;
+    background-color : #333;
+  }
+
+  .button.primary {
+    --raised-3d-color: hsl(348 83% 7% / 15%);
+  }
+}
+
+div.code-toolbar>.toolbar>.toolbar-item>a,
+div.code-toolbar>.toolbar>.toolbar-item>button,
+div.code-toolbar>.toolbar>.toolbar-item>span {
+  padding    : 0.5ch 1ch !important;
+  display    : block;
+  line-height: 1.2;
+  font-size  : 1rem;
+  margin     : 1rem;
+}
+
+pre[data-line] {
+  padding-block-start: 2ch !important;
+}
+
+.line-highlight {
+  background    : linear-gradient(to right, #fa0, #fa00) !important;
+  mix-blend-mode: soft-light;
+}
+
+h2 {
+  margin-block-start: 2em;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.stack {
+  display       : flex;
+  flex-direction: column;
+  margin-block  : 1rem;
+}
+
+.form-label {
+  margin-block-end: 0.5ch;
+}
+
+.form-control {
+  padding      : 0.5ch 1ch;
+  border-radius: 0.25ch;
+  border       : 1px solid #0002;
+  font-size    : 1rem;
+  font-family  : sans-serif;
+}
+
+.form-control:focus-visible {
+  border : 2px solid cornflowerblue;
+  outline: 5px solid hsl(219 79% 66% / 0.25);
+}
