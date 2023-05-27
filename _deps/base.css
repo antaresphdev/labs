@@ -115,3 +115,12 @@ h2 {
   border : 2px solid cornflowerblue;
   outline: 5px solid hsl(219 79% 66% / 0.25);
 }
+
+.live-example {
+  border       : 1px solid #0003;
+  border-radius: 1ch;
+  box-shadow   : inset 0 2px 8px #0005;
+  display      : grid;
+  padding      : 2rem;
+  place-items  : center;
+}

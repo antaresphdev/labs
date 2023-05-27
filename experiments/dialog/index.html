@@ -27,16 +27,19 @@
     </li>
   </ol>
 
-  <button class="primary button" data-dialog="dialog-1">Open Dialog</button>
-  <dialog id="dialog-1">
-    <h3>This is a dialog</h3>
-    <p>This is the new HTML <code>&lt;dialog></code> element. It opens with very minimal JavaScript. You can also close
-      it without JS.</p>
-    <p>You can also close this dialog by pressing the <kbd>Esc</kbd> button on your keyboard.</p>
-    <form method="dialog">
-      <button>Close dialog</button>
-    </form>
-  </dialog>
+  <article class="live-example">
+    <button class="primary button" data-dialog="dialog-1">Open Dialog</button>
+    <dialog id="dialog-1">
+      <h3>This is a dialog</h3>
+      <p>This is the new HTML <code>&lt;dialog></code> element. It opens with very minimal JavaScript. You can also
+        close
+        it without JS.</p>
+      <p>You can also close this dialog by pressing the <kbd>Esc</kbd> button on your keyboard.</p>
+      <form method="dialog">
+        <button>Close dialog</button>
+      </form>
+    </dialog>
+  </article>
 
   <pre class="line-numbers" data-line="1,7-9"><code class="language-html">&lt;button id="btn-dialog">Open Dialog&lt;/button>
 
@@ -66,23 +69,23 @@ button.addEventListener('click', e => dialog.showModal())</code></pre>
     </li>
   </ol>
 
-  <button class="primary button" data-dialog="dialog-2">Open Dialog</button>
-  <dialog id="dialog-2">
-    <form action="./" method="GET">
-      <h3>Subscribe to our newsletter.</h3>
-      <p>This dialog can submit your email address while also closing this dialog using a single form.</p>
-
-      <div class="stack">
-        <label class="form-label" for="email">Email Address</label>
-        <input class="form-control" type="email" name="email" id="email" autocomplete="email" inputmode="email">
-      </div>
-
-      <div class="d-flex justify-content-space-between">
-        <button type="submit" formmethod="dialog" class="button">Cancel</button>
-        <button type="submit" class="primary button">Subscribe to newsletter</button>
-      </div>
-    </form>
-  </dialog>
+  <article class="live-example">
+    <button class="primary button" data-dialog="dialog-2">Open Dialog</button>
+    <dialog id="dialog-2">
+      <form action="./" method="GET">
+        <h3>Subscribe to our newsletter.</h3>
+        <p>This dialog can submit your email address while also closing this dialog using a single form.</p>
+        <div class="stack">
+          <label class="form-label" for="email">Email Address</label>
+          <input class="form-control" type="email" name="email" id="email" autocomplete="email" inputmode="email">
+        </div>
+        <div class="d-flex justify-content-space-between">
+          <button type="submit" formmethod="dialog" class="button">Cancel</button>
+          <button type="submit" class="primary button">Subscribe to newsletter</button>
+        </div>
+      </form>
+    </dialog>
+  </article>
 
   <pre class="line-numbers" data-line="4,14"><code class="language-html">&lt;button id="btn-dialog">Open Dialog&lt;/button>
 
@@ -109,18 +112,24 @@ const dialog = document.getElementById('dialog-2');
 button.addEventListener('click', e => dialog.showModal())</code></pre>
 
   <h2>Styling</h2>
-  <p>Puwedeng i-style ang mismong <code>&lt;dialog></code> element kagaya ng ibang elements gamit ang CSS. Pero bukod dito, puwede ring i-style ang backdrop ng dialog gamit ang bagong pseudo-element selector na <code>::backdrop</code>. (CSS, line #9)</p>
+  <p>Puwedeng i-style ang mismong <code>&lt;dialog></code> element kagaya ng ibang elements gamit ang CSS. Pero bukod
+    dito, puwede ring i-style ang backdrop ng dialog gamit ang bagong pseudo-element selector na
+    <code>::backdrop</code>. (CSS, line #9)
+  </p>
 
-  <button class="primary button" data-dialog="dialog-3">Open Dialog</button>
-  <dialog id="dialog-3">
-    <h3>This is a dialog</h3>
-    <p>This is the new HTML <code>&lt;dialog></code> element. It opens with very minimal JavaScript. You can also close
-      it without JS.</p>
-    <p>You can also close this dialog by pressing the <kbd>Esc</kbd> button on your keyboard.</p>
-    <form method="dialog" class="d-flex">
-      <button style="margin-inline-start: auto;" class="button">Close dialog</button>
-    </form>
-  </dialog>
+  <article class="live-example">
+    <button class="primary button" data-dialog="dialog-3">Open Dialog</button>
+    <dialog id="dialog-3">
+      <h3>This is a dialog</h3>
+      <p>This is the new HTML <code>&lt;dialog></code> element. It opens with very minimal JavaScript. You can also
+        close
+        it without JS.</p>
+      <p>You can also close this dialog by pressing the <kbd>Esc</kbd> button on your keyboard.</p>
+      <form method="dialog" class="d-flex">
+        <button style="margin-inline-start: auto;" class="button">Close dialog</button>
+      </form>
+    </dialog>
+  </article>
 
   <pre class="line-numbers" data-line="4,14"><code class="language-html">&lt;dialog id="dialog-3">
   ...
