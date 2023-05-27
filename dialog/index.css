@@ -1,0 +1,12 @@
+#dialog-3 {
+  overflow     : hidden;
+  border-radius: 1ch;
+  box-shadow   : 2px 4px 16px #0003;
+  border       : 0;
+  padding      : 2ch;
+}
+
+#dialog-3::backdrop {
+  background-image: linear-gradient(to bottom right, red, orange, yellow, green, blue, indigo, violet);
+  opacity         : 0.75;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Dialog</title>
+
+  <link rel="stylesheet" href="../_deps/base.css">
+  <link rel="stylesheet" href="../_deps/prism.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="page">
+  <h1>HTML Dialog</h1>
+  <p>Gamit ang bagong <code>&lt;dialog></code> element sa HTML, mas madali nang gumawa ng mga modal.</p>
+
+  <h2>Basic Dialog</h2>
+  <p>Sa pinaka-basic na dialog, dalawa lang ang kailangan:</p>
+  <ol>
+    <li>Isang button na magbubukas sa <code>&lt;dialog></code> element gamit ang <code>dialog.showModal()</code> method.
+      (HTML, line #1) (JavaScript, line #4)</li>
+    <li>Isang <code>&lt;form></code> element sa loob ng <code>&lt;dialog></code> na may attribute na
+      <code>method="dialog"</code>. Kailangang may <code>&lt;button type="submit"></code> sa loob nito. Kapag na-submit
+      ang form na ito, magko-close ang dialog. (Lines #7-9)
+    </li>
+  </ol>
+
+  <button class="primary button" data-dialog="dialog-1">Open Dialog</button>
+  <dialog id="dialog-1">
+    <h3>This is a dialog</h3>
+    <p>This is the new HTML <code>&lt;dialog></code> element. It opens with very minimal JavaScript. You can also close
+      it without JS.</p>
+    <p>You can also close this dialog by pressing the <kbd>Esc</kbd> button on your keyboard.</p>
+    <form method="dialog">
+      <button>Close dialog</button>
+    </form>
+  </dialog>
+
+  <pre class="line-numbers" data-line="1,7-9"><code class="language-html">&lt;button id="btn-dialog">Open Dialog&lt;/button>
+
+&lt;dialog id="dialog-1">
+  &lt;h3>This is a dialog&lt;/h3>
+  &lt;p>This is the new HTML &lt;code>&lt;dialog>&lt;/code> element. It opens with very minimal JavaScript. You can also close it
+    without JS.&lt;/p>
+  &lt;form method="dialog">
+    &lt;button>Close dialog&lt;/button>
+  &lt;/form>
+&lt;/dialog></code></pre>
+
+  <pre class="line-numbers" data-line="4"><code class="language-javascript">const button = document.getElementById('btn-dialog');
+const dialog = document.getElementById('dialog-1');
+
+button.addEventListener('click', e => dialog.showModal())</code></pre>
+
+  <h2>Form submission</h2>
+  <p>Paano naman kung may form submission ka na kailangang gawin sa loob ng <code>&lt;dialog></code> element?</p>
+  <ol>
+    <li>Gamitin ang <code>method</code> na kailangan mo sa <code>&lt;form></code> element. (e.g. <code>GET</code>,
+      <code>POST</code>, <code>PUT</code>, etc. (HTML, line #4)
+    </li>
+    <li>Sa iyong close and/or cancel button, ilagay ang mga attributes na <code>type="submit"</code> at
+      <code>formmethod="dialog"</code>. Sa ganitong way, mako-close pa rin ang dialog gamit ang close at cancel button,
+      at masa-submit din ng user ang form. (HTML, line 14)
+    </li>
+  </ol>
+
+  <button class="primary button" data-dialog="dialog-2">Open Dialog</button>
+  <dialog id="dialog-2">
+    <form action="./" method="GET">
+      <h3>Subscribe to our newsletter.</h3>
+      <p>This dialog can submit your email address while also closing this dialog using a single form.</p>
+
+      <div class="stack">
+        <label class="form-label" for="email">Email Address</label>
+        <input class="form-control" type="email" name="email" id="email" autocomplete="email" inputmode="email">
+      </div>
+
+      <div class="d-flex justify-content-space-between">
+        <button type="submit" formmethod="dialog" class="button">Cancel</button>
+        <button type="submit" class="primary button">Subscribe to newsletter</button>
+      </div>
+    </form>
+  </dialog>
+
+  <pre class="line-numbers" data-line="4,14"><code class="language-html">&lt;button id="btn-dialog">Open Dialog&lt;/button>
+
+&lt;dialog id="dialog-2">
+&lt;form action="./" method="GET">
+  &lt;h3>Subscribe to our newsletter.&lt;/h3>
+  &lt;p>This dialog can submit your email address while also closing this dialog using a single form.&lt;/p>
+
+  &lt;div class="stack">
+    &lt;label class="form-label" for="email">Email Address&lt;/label>
+    &lt;input class="form-control" type="email" name="email" id="email" autocomplete="email" inputmode="email">
+  &lt;/div>
+
+  &lt;div class="d-flex justify-content-space-between">
+    &lt;button type="submit" formmethod="dialog" class="button">Cancel&lt;/button>
+    &lt;button type="submit" class="primary button">Subscribe to newsletter&lt;/button>
+  &lt;/div>
+&lt;/form>
+&lt;/dialog></code></pre>
+
+  <pre class="line-numbers"><code class="language-javascript">const button = document.getElementById('btn-dialog');
+const dialog = document.getElementById('dialog-2');
+
+button.addEventListener('click', e => dialog.showModal())</code></pre>
+
+  <h2>Styling</h2>
+  <p>Puwedeng i-style ang mismong <code>&lt;dialog></code> element kagaya ng ibang elements gamit ang CSS. Pero bukod dito, puwede ring i-style ang backdrop ng dialog gamit ang bagong pseudo-element selector na <code>::backdrop</code>. (CSS, line #9)</p>
+
+  <button class="primary button" data-dialog="dialog-3">Open Dialog</button>
+  <dialog id="dialog-3">
+    <h3>This is a dialog</h3>
+    <p>This is the new HTML <code>&lt;dialog></code> element. It opens with very minimal JavaScript. You can also close
+      it without JS.</p>
+    <p>You can also close this dialog by pressing the <kbd>Esc</kbd> button on your keyboard.</p>
+    <form method="dialog" class="d-flex">
+      <button style="margin-inline-start: auto;" class="button">Close dialog</button>
+    </form>
+  </dialog>
+
+  <pre class="line-numbers" data-line="4,14"><code class="language-html">&lt;dialog id="dialog-3">
+  ...
+&lt;/dialog></code></pre>
+
+  <pre class="line-numbers" data-line="9"><code class="language-css">#dialog-3 {
+  overflow     : hidden;
+  border-radius: 1ch;
+  box-shadow   : 2px 4px 16px #0003;
+  border       : 0;
+  padding      : 2ch;
+}
+
+#dialog-3::backdrop {
+  background-image: linear-gradient(to bottom right, red, orange, yellow, green, blue, indigo, violet);
+  opacity         : 0.75;
+}</code></pre>
+
+  <script src="../_deps/prism.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
