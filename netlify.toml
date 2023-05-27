@@ -1,0 +1,4 @@
+[[redirects]]
+  from   = "/dialog"
+  to     = "/experiments/dialog"
+  status = 301
