@@ -1,0 +1,162 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin     : 0;
+  min-height : 100vh;
+  font-family: "Inter", "Arial", sans-serif;
+  padding    : 1rem;
+}
+
+.navbar {
+  overflow        : auto;
+  background-color: #eef;
+  border-radius   : 0.5rem;
+}
+
+.navbar__list {
+  display   : flex;
+  list-style: none;
+  margin    : 0;
+  padding   : 0;
+  gap       : 1rem;
+}
+
+.navbar__list-item {
+  padding: 0.5rem;
+}
+
+.nav {
+  display        : block;
+  padding        : 1rem 1.5rem;
+  text-decoration: none;
+}
+
+.active.nav {
+  background-color: #ddf;
+  border-radius   : 6px;
+}
+
+.body__content {
+  padding-block: 2rem;
+}
+
+.grid {
+  display              : grid;
+  gap                  : 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(75ch, 100%), 1fr));
+}
+
+.card {
+  container-type: inline-size;
+  container-name: card;
+}
+
+.card__inner {
+  overflow          : auto;
+  border-radius     : 6px;
+  display           : grid;
+  background-color  : black;
+  color             : white;
+  grid-template-rows: 1fr min-content auto;
+  width             : min(35ch, 100%);
+  margin-inline     : auto;
+}
+
+.card__inner>*,
+.card__content>* {
+  grid-column: 1/2;
+  z-index    : 2;
+}
+
+.card__image {
+  background-color: black;
+  display         : flex;
+  flex-direction  : column;
+  position        : relative;
+  grid-row        : 1/3;
+}
+
+.card__image::after {
+  content         : '';
+  background-image: linear-gradient(to bottom, transparent, black);
+  position        : absolute;
+  bottom          : 0;
+  left            : 0;
+  width           : 100%;
+  height          : 50%;
+}
+
+.card__image img {
+  width     : 100%;
+  height    : 100%;
+  object-fit: cover;
+}
+
+.card__content {
+  display: contents;
+}
+
+.card__header {
+  grid-row      : 2/3;
+  padding-inline: 2rem;
+  display       : flex;
+  flex-direction: column;
+}
+
+.card__header>* {
+  margin: 0;
+}
+
+.card__body {
+  font-family      : Georgia, serif;
+  padding-inline   : 2rem;
+  padding-block-end: 2rem
+}
+
+.card__body p {
+  margin: 0;
+}
+
+@container card (min-width:800px) {
+  .card__inner {
+    width                : min(100ch, 100%);
+    grid-template-columns: 2fr 5fr;
+    grid-template-rows   : 1fr;
+    background-color     : transparent;
+    color                : initial;
+    overflow             : visible;
+    row-gap              : 1rem;
+    column-gap           : 2rem;
+    margin-inline        : auto;
+  }
+
+  .card__content {
+    display        : flex;
+    flex-direction : column;
+    grid-column    : 2/3;
+    justify-content: center;
+    gap            : 1rem;
+  }
+
+  .card__image {
+    grid-column  : 1/2;
+    overflow     : hidden;
+    border-radius: 6px;
+    box-shadow   : 0 10px 25px #0003;
+    aspect-ratio : 612/766;
+  }
+
+  .card__header,
+  .card__body {
+    grid-column: 2/3;
+    padding    : 0;
+  }
+
+  .card__header {
+    grid-row: 1/2;
+  }
+}

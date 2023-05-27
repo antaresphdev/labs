@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Queries example</title>
+    <style>
+      .container {
+        container-type: inline-size;
+        container-name: my-container;
+        resize: horizontal;
+        display: block;
+        overflow: auto;
+        width: min(100ch, 100%);
+        margin-inline: auto;
+        border: 1px solid red;
+      }
+
+      .card {
+        font-family: 'Figtree', 'Inter', sans-serif;
+        padding: 1rem;
+      }
+
+      .card h2 {
+        margin: 0;
+        transition: color 300ms;
+      }
+
+      .card::after {
+        padding: 1ch 2ch;
+        border-radius: 8px;
+        background: dodgerblue;
+        color: white;
+        font-weight: bold;
+        display: block;
+        margin-inline-start: auto;
+        width: fit-content;
+        transition: background 300ms;
+      }
+
+      @container my-container (min-width: 25ch) {
+        .card::after {
+          content: 'width >= 25ch';
+          background-color: green;
+        }
+
+        .card h2 {
+          color: green;
+        }
+      }
+
+      @container my-container (min-width: 35ch) {
+        .card::after {
+          content: 'width >= 35ch';
+          background-color: blue;
+        }
+
+        .card h2 {
+          color: blue;
+        }
+      }
+
+      @container my-container (min-width: 45ch) {
+        .card::after {
+          content: 'width >= 45ch';
+          background-color: purple;
+        }
+
+        .card h2 {
+          color: purple;
+        }
+      }
+
+      @container my-container (min-width: 55ch) {
+        .card::after {
+          content: 'width >= 55ch';
+          background-color: red;
+        }
+
+        .card h2 {
+          color: red;
+        }
+      }
+
+      @container my-container (min-width: 65ch) {
+        .card::after {
+          content: 'width >= 65ch';
+          background-color: orange;
+        }
+
+        .card h2 {
+          color: orange;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <article class="card">
+        <h2>Article Title</h2>
+        <p>This is a sample article.</p>
+      </article>
+    </div>
+  </body>
+</html>
