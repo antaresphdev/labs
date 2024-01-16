@@ -5,7 +5,7 @@ dialogTriggers.forEach(button => {
   if (dialogId != null && dialogId.length > 0) {
     const dialog = document.getElementById(dialogId)
     if (dialog != null) {
-      button.addEventListener('click', e => dialog.showModal())
+      button.addEventListener('click', e => dialog.show())
     }
   }
 })

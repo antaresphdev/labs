@@ -1,0 +1,79 @@
+body {
+  --font-heading: Fraunces, Georgia, serif;
+  --font-body   : Figtree, Inter, DM Sans, Arial, sans-serif;
+  padding       : 2rem;
+  font-family   : var(--font-body);
+}
+
+img {
+  max-width: 100%;
+  height   : auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family            : var(--font-heading);
+  font-variation-settings: "wght"400, "SOFT"100, "WONK"100;
+}
+
+.input-group {
+  display      : flex;
+  gap          : 1ch;
+  padding-block: 1rem;
+}
+
+.grid {
+  display              : grid;
+  gap                  : 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(25ch, 1fr));
+}
+
+.article {
+  display           : grid;
+  grid-template-rows: auto 1fr;
+}
+
+.article__image {
+  border-radius: 8px;
+  object-fit   : cover;
+  box-shadow   :
+    0 1px 2px #0001,
+    0 4px 8px #0001;
+}
+
+.article__title {
+  margin-block-start: 1rem;
+  margin-block-end  : 0.5rem;
+}
+
+.article__summary {
+  margin: 0;
+}
+
+.article__date {
+  font-size: 0.8em;
+  opacity  : 0.8;
+}
+
+
+.grid--symmetric {
+  grid-auto-rows: 3fr min-content;
+}
+
+.grid--symmetric .article {
+  grid-row          : span 2;
+  grid-template-rows: subgrid;
+}
+
+.grid--symmetric .article__image {
+  grid-row: 1/2;
+  height  : 100%;
+}
+
+.grid--symmetric .article__title {
+  grid-row: 2/3;
+}

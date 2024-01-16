@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - CSS Subgrid</title>
+  <link rel="canonical" href="https://codepen.io/antaresphdev/pen/abMpjve">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://francisrub.io/assets/styles/font-stack.css'>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <h1>Gallery</h1>
+  <div class="input-group">
+    <input type="checkbox" name="use-subgrid" id="use-subgrid">
+    <label for="use-subgrid">Use subgrid</label>
+  </div>
+  <div class="grid" id="gallery-grid">
+    <article class="article">
+      <img class="article__image" src="https://ik.imagekit.io/8jjzxcl9p/tr:f-webp,w-700/gallery/2024-birthday/09.jpg"
+        alt="Francis Rubio holding a cake" width="1620" height="1080">
+      <div class="article__body">
+        <h2 class="article__title">Quarter-Life Crisis</h2>
+        <p class="article__summary">Pictures we took as I celebrated my birthday with my friends through an existential
+          crisis.</p>
+        <time class="article__date" datetime="01-15-2024">January 15, 2024</time>
+      </div>
+    </article>
+    <article class="article">
+      <img class="article__image" src="https://ik.imagekit.io/8jjzxcl9p/tr:w-900/gallery/pride-2023/6.jpg"
+        alt="Francis on a red background" width="2000" height="3000">
+      <div class="article__body">
+        <h2 class="article__title">Rosas, Hiyas, at Perlas</h2>
+        <p class="article__summary">Keeping in touch with my feminine side as a queer person</p>
+        <time class="article__date" datetime="01-15-2024">June 24, 2023</time>
+      </div>
+    </article>
+    <article class="article">
+      <img class="article__image"
+        src="https://ik.imagekit.io/8jjzxcl9p/tr:w-900/gallery/a-studios-shoot-03-26-2023/DSCF0112.JPG"
+        alt="Francis on a pink background" width="2000" height="3000">
+      <div class="article__body">
+        <h2 class="article__title">Don't be fooled by the pink…</h2>
+        <p class="article__summary">An exploration of gothic visuals against a vibrant feminine pink</p>
+        <time class="article__date" datetime="01-15-2024">March 25, 2023</time>
+      </div>
+    </article>
+    <article class="article">
+      <img class="article__image" src="https://ik.imagekit.io/8jjzxcl9p/tr:w-900/gallery/new-years-2023/image2.jpeg"
+        alt="Francis' torso wearing a gothic outfit" width="2048" height="2049">
+      <div class="article__body">
+        <h2 class="article__title">New Year’s Celebration 2023</h2>
+        <p class="article__summary">Photos from my first new year's celebration</p>
+        <time class="article__date" datetime="01-15-2024">January 2, 2023</time>
+      </div>
+    </article>
+    <article class="article">
+      <img class="article__image"
+        src="https://ik.imagekit.io/8jjzxcl9p/tr:w-900/gallery/2022-life-in-photos/drag-1.jpeg" alt="Francis in drag"
+        width="2048" height="2049">
+      <div class="article__body">
+        <h2 class="article__title">2022: My Year in Photos</h2>
+        <p class="article__summary">My favorite photos from this year.</p>
+        <time class="article__date" datetime="01-15-2024">December 10, 2022</time>
+      </div>
+    </article>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
